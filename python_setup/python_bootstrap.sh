@@ -19,11 +19,12 @@ pip -V > ~/venv_install_path.txt
 pip install --upgrade pip
 
 # Install django framework
-pip install -r /vagrant/requirments.txt
+pip install -r /vagrant/python_setup/requirments.txt
 if [ $? -gt 0 ]; then
-    echo 2> 'Unable to install django framework requirements from requirements.txt!'
+    echo 2> 'Unable to install django framework requirements from requirements.txt file!'
     exit 1
 fi
 
-sudo reboot
-who -b >> ~/reboot_test.txt
+# Reboot VM
+reboot
+echo $(uptime) >> ~/reboot_test.txt

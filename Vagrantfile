@@ -32,6 +32,6 @@ Vagrant.configure("2") do |config|
   SHELL
 
   # create python virtual environment
-  config.vm.provision :shell, :path => "venv-bootstrap.sh"
+  config.vm.provision :shell, :path => "python_setup/python_bootstrap.sh"
 
 end
