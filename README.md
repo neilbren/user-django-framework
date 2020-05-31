@@ -13,16 +13,15 @@ Create a vagrant project that will:
 
 The users REST API will use the Django framework to allow users to perform the following CRUD operations to the backend DB.
 
-  Create new users
-  Listing existing user data
-  Update user data
-  Authenticate user credentials
-  Delete user data
+-  Create new users
+-  Listing existing user data
+-  Update user data
+-  Authenticate user credentials
+-  Delete user data
 
 The project will utilise the API Viewset class.   
 .
-
 __Sources:__
-https://github.com/encode/django-rest-framework
-https://github.com/LondonAppDeveloper/recipe-app-api
-https://docs.djangoproject.com/
+- https://github.com/encode/django-rest-framework
+- https://github.com/LondonAppDeveloper/recipe-app-api
+- https://docs.djangoproject.com/
