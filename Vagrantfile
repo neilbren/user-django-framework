@@ -16,11 +16,12 @@ Vagrant.configure("2") do |config|
  # Every Vagrant development environment requires a box. You can search for
  # boxes at https://vagrantcloud.com/search.
 
- # launch latest Centos7 VM && update hostname
+ # Launch latest Centos7 VM && update hostname
  config.vm.box = "centos/7"
+ config.vm.box_version = "~>1905.1"
  config.vm.hostname = "django-centos7"
 
- # Setup port forwarding for httpd
+ # Setup port forwarding
  config.vm.network "forwarded_port", guest: 5000, host: 5000
 
  # Create bilatoral sync between host and guest
@@ -31,7 +32,7 @@ Vagrant.configure("2") do |config|
    sudo yum update -y
   SHELL
 
-  # create python virtual environment
+  # Create python virtual environment
   config.vm.provision :shell, :path => "python_setup/python_bootstrap.sh"
 
 end

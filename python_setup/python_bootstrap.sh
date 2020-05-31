@@ -12,8 +12,8 @@ if ! grep -q PYTHON_ALIAS_ADDED /home/vagrant/.bashrc; then
   echo "alias python='python3'" >> /home/vagrant/.bashrc
 fi
 
-# Create python virtual environment
-cd /vagrant/; python3 -m venv ~/env
+# create python virtual environment
+cd /vagrant/; python -m venv ~/env
 source ~/env/bin/activate
 pip -V > ~/venv_install_path.txt
 pip install --upgrade pip
@@ -27,4 +27,3 @@ fi
 
 # Reboot VM
 reboot
-echo $(uptime) >> ~/reboot_test.txt
