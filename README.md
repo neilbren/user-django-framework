@@ -19,8 +19,8 @@ The users REST API will use the Django framework to allow users to perform the f
 -  Authenticate user credentials
 -  Delete user data
 
-The project will utilise the API Viewset class.   
-.
+The project will utilise the API Viewset class.
+
 __Sources:__
 - https://github.com/encode/django-rest-framework
 - https://github.com/LondonAppDeveloper/recipe-app-api
