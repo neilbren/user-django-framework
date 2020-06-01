@@ -1,6 +1,6 @@
 __Author: Neil Brennan__
 
-# Django Project on Centos 7
+# Django REST API Project on Centos 7
 
 *Requirements*
 
