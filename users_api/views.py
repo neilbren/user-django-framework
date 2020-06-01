@@ -1,6 +1,7 @@
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import viewsets
+from rest_framework import filters
 
 from users_api import permissions
 from users_api import serializers
@@ -11,3 +12,5 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.UserSerializer
     queryset = models.User.objects.all()
     permission_classes = (permissions.UpdateUser,)
+    filter_backends = (filters.SearchFilter,)
+    search_fields = ('username', 'email',)
