@@ -17,6 +17,7 @@ cd /vagrant/; python -m venv ~/env
 source ~/env/bin/activate
 pip -V > ~/venv_install_path.txt
 pip install --upgrade pip
+pip install djoser
 
 # Install django framework
 pip install -r /vagrant/python_setup/requirments.txt

@@ -7,6 +7,7 @@ from users_api import permissions
 from users_api import serializers
 from users_api import models
 
+
 class UserViewSet(viewsets.ModelViewSet):
 
     serializer_class = serializers.UserSerializer
