@@ -11,5 +11,3 @@ class UpdateUser(permissions.BasePermission):
 
        elif request.method in permissions.SAFE_METHODS:
             return True
-
-       return obj.id == request.user.id
