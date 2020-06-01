@@ -3,6 +3,9 @@ __Author: Neil Brennan__
 # Django REST API Project on Centos 7
 
 *Requirements*
+-  vagrant
+-  virtualBox
+-  python
 
 Create a vagrant project that will:
 1. Launch a Linux VM (Centos 7)
@@ -14,13 +17,13 @@ Create a vagrant project that will:
 The users REST API will use the Django framework to allow users to perform the following CRUD operations to the backend DB.
 
 -  Create new users
--  Listing existing user data
+-  List existing user data
 -  Update user data
--  Authenticate user credentials
+-  Authenticate users
 -  Delete user data
 
 The project will utilise the API Viewset class.   
-.
+
 __Sources:__
 - https://github.com/encode/django-rest-framework
 - https://github.com/LondonAppDeveloper/recipe-app-api
