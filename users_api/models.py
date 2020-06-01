@@ -8,10 +8,12 @@ class UserManager(BaseUserManager):
 
     def user_creation (self, email, username, password=None):
         if len(email) <= 0:
-            raise ValueError('All Users must registered an email address')
+            raise ValueError('All Users must register an email address')
 
         # Create a new model based on email && username
-        user = self.model(email=email, username=username)
+        user = self.model(
+            email=email,
+            username=username)
         # Encrypt password with set_password function
         user.set_password(password)
         user.save(using=self._db)
