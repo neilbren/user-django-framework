@@ -1,5 +1,4 @@
-__Author: Neil Brennan
-__
+__Author: Neil Brennan__
 
 <img width="422" alt="django" src="https://user-images.githubusercontent.com/48773037/83498721-2df01a00-a4b4-11ea-8c1d-b2e3629e567a.png">
 
@@ -107,7 +106,7 @@ curl -X DELETE http://127.0.0.1:5000/api/users/10/ -H 'Authorization: Token 50a4
 
 <img width="600" alt="django" src="https://user-images.githubusercontent.com/48773037/83498711-2af52980-a4b4-11ea-9d3f-d907760356b2.png">
 
-*In conclusion:*, we have implemented ability to perform simple CRUD operations on the defined Users API, utilising the viewset functionality within the DRF. 
+*In conclusion;* we have implemented ability to perform simple CRUD operations on the defined Users API, utilising the viewset functionality within the DRF. 
 
 
 
