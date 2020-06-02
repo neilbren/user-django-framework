@@ -49,7 +49,7 @@ Once we have the DFR installed within our virtual environment, we need to create
 Now we have our python virtual environment running, we can start the development sever, using the the port specifed on provision:
 
 ```
-/manage.py runserver 0.0.0.0:5000
+./manage.py runserver 0.0.0.0:5000
 ```
 Now we should be able to reach the Django Amdin in our browser at:
 
@@ -82,7 +82,7 @@ Then, we registered the /users `UserViewSet` with the DFR router in urls.py, loc
 
 <img width="600" alt="django" src="https://user-images.githubusercontent.com/48773037/83500621-edde6680-a4b6-11ea-9009-35ea095c481c.png">
  
-We then applied permissions to the accessible HTTP actions, defined in permissisons.py. The `UpdateUser` class has a boolean function to determine the actions based on type of user. The logic determines that any user can run safe HTTP methods, ie. get `GET`, create `POST` and update `PATCH` users, but, require admin authentication to run destructive HTTP `DELETE` methods. 
+We then applied permissions to the accessible `HTTP` actions, defined in permissisons.py. The `UpdateUser` class has a boolean function to determine the actions based on type of user. The logic determines that any user can run safe `HTTP` methods, ie. get `GET`, create `POST` and update `PATCH` users, but, require admin authentication to run destructive `HTTP` `DELETE` methods. 
 
 <img width="600" alt="django" src="https://user-images.githubusercontent.com/48773037/83498703-27fa3900-a4b4-11ea-87b0-1c3c819687d9.png">
 
@@ -106,7 +106,7 @@ curl -X DELETE http://127.0.0.1:5000/api/users/10/ -H 'Authorization: Token 50a4
 
 <img width="600" alt="django" src="https://user-images.githubusercontent.com/48773037/83498711-2af52980-a4b4-11ea-9d3f-d907760356b2.png">
 
-*In conclusion;* we have implemented ability to perform simple CRUD operations on the defined Users API, utilising the viewset functionality within the DRF. 
+*In conclusion;* we have implemented ability to perform simple CRUD operations on the defined Users REST API, utilising the viewset functionality within the DRF. 
 
 
 
