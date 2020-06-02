@@ -43,7 +43,7 @@ cd /vagrant/; python -m venv ~/env
 pip install -r requirments.txt
 
 ```
-Once we have the DFR installed within our virtual environment, we created the project and started our `users_api` application, and finally updated the necassary global parameters in setting.py.  
+Once we have the DRF installed within our virtual environment, we created the project and started our `users_api` application, and finally updated the necassary global parameters in setting.py.  
 
 Now we have our python virtual environment running, we can start the development sever, using the the port specifed on provision:
 
@@ -57,7 +57,7 @@ http://0.0.0.0:5000/admin/
 ```
 
 The first part of the DRF created was the user creation and configuration classes defined in models.py. 
-DFR provides an automatic access API to the database through models, handling the relationship between models and the backend database directly. 
+DRF provides an automatic access API to the database through models, handling the relationship between models and the backend database directly. 
 
 - `User`  - defining the attributes of the user class.
 - `UserManager` - defining the user model and creation parameters.
