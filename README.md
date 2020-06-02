@@ -35,23 +35,22 @@ __Sources:__
 
 *Setup:*
 
-__Note:__ These requirements are boootstrapped to the provisioned on the VM, so should not be necessary:
+You will be required to create & source the python vitrual environment on login, with the commands below. Then, to install the DRF and required packages within the vitrual environment, we need to install the requirments.txt with `pip`
 
 ```
 cd /vagrant/; python -m venv ~/env
 . ~/env/bin/activate
-pip install --upgrade pip
-pip install djoser
-pip install -r /vagrant/python_setup/requirments.txt
+pip install -r /vagrant/requirments.txt
+
 ```
-Once we have the DFR installed within our virtual environment, we need to create the project and start our `users_api` application, and finally update the necassary global parameters in setting.py.  
+Once we have the DFR installed within our virtual environment, we created the project and started our `users_api` application, and finally updated the necassary global parameters in setting.py.  
 
 Now we have our python virtual environment running, we can start the development sever, using the the port specifed on provision:
 
 ```
 ./manage.py runserver 0.0.0.0:5000
 ```
-Now we should be able to reach the Django Amdin in our browser at:
+Now we can reach the Django Amdin in our browser at:
 
 ```
 http://0.0.0.0:5000/admin/
@@ -77,7 +76,7 @@ We created the `UserViewSet` class that imports the `UserSerializer` serializer 
 Then, we registered the /users `UserViewSet` with the DFR router in urls.py, located under the /api root directly defined at project level, so our full URL will be:
 
 ```
-/http://127.0.0.1:5000/api/users/
+http://127.0.0.1:5000/api/users/
 ```
 
 <img width="600" alt="django" src="https://user-images.githubusercontent.com/48773037/83500621-edde6680-a4b6-11ea-9009-35ea095c481c.png">
