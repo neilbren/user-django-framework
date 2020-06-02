@@ -40,7 +40,7 @@ You will be required to create & source the python vitrual environment on login,
 ```
 cd /vagrant/; python -m venv ~/env
 . ~/env/bin/activate
-pip install -r /vagrant/requirments.txt
+pip install -r requirments.txt
 
 ```
 Once we have the DFR installed within our virtual environment, we created the project and started our `users_api` application, and finally updated the necassary global parameters in setting.py.  
