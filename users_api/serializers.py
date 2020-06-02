@@ -14,3 +14,15 @@ class UserSerializer(serializers.ModelSerializer):
                 'style': {'input_type': 'password'}
             }
         }
+
+
+    # we need to call the user_creation fn defined in Users, to ensure set_password is called
+    def create(self, validated_data):
+
+        user = models.User.objects.user_creation(
+            email=validated_data['email'],
+            name=validated_data['name'],
+            password=validated_data['password']
+        )
+
+        return user
