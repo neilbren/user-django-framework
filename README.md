@@ -99,8 +99,8 @@ curl -X POST -d '{"username": "neilbren","password": "top_secret"}' -H
 <img width="600" alt="django" src="https://user-images.githubusercontent.com/48773037/83498683-216bc180-a4b4-11ea-82d2-8f2cb661f8af.png">
 
 ```
-curl -X DELETE http://127.0.0.1:5000/api/users/10/ -H 'Authorization: Token 50a4f3011d28e9c56176da3c6a35f0a831dd1162'
-{"DELETE /api/users/10/ HTTP/1.1","200:10403"}
+curl -X DELETE http://127.0.0.1:5000/api/users/25/ -H 'Authorization: Token 50a4f3011d28e9c56176da3c6a35f0a831dd1162'
+{"DELETE /api/users/25/ HTTP/1.1","200:10403"}
 ```
 
 <img width="600" alt="django" src="https://user-images.githubusercontent.com/48773037/83498711-2af52980-a4b4-11ea-9d3f-d907760356b2.png">
