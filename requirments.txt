@@ -1,2 +1,4 @@
 django==2.1.*
 djangorestframework==3.9.2
+djoser==2.0.3
+pip==20.1.1
