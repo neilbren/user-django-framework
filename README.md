@@ -35,7 +35,7 @@ __Sources:__
 
 *Setup:*
 
-__Note:__ These requirements are boootstrapped to the provisioning on the VM, so should not be necessary:
+__Note:__ These requirements are boootstrapped to the provisioned on the VM, so should not be necessary:
 
 ```
 cd /vagrant/; python -m venv ~/env
@@ -58,23 +58,23 @@ http://0.0.0.0:5000/admin/
 ```
 
 The first part of the DRF created was the user creation and configuration classes defined in models.py. 
-Django models provide an automatic access API to the database through models, handling the relationship between models and the backend database directly. 
+DFR provides an automatic access API to the database through models, handling the relationship between models and the backend database directly. 
 
 - `User`  - defining the attributes of the user class.
 - `UserManager` - defining the user model and creation parameters.
 
-This allows us to create a superuser in the django admin, based on the fields we specified in `create_superuser` function of the UserManager class:
+This allows us to create a superuser in the Django Admin, based on the fields we specified in `create_superuser` function of the UserManager class:
 
 ```
 python manage.py createsuperuser
 ```
 
-Then, by adding the `User` class to the admin.py file, we can authenticate with the superuser, and manage the users from here. We created a serializor, importing the class defined in the models.py, using a meta class to reference and format the specifc `User` class. 
+Then, by registering the `User` class to the admin.py file, we can authenticate with the superuser, and manage the users wiithin the database from here. We then created a `UserSerializer` class, importing the classess defined in the models.py, using a meta class to reference and format the specifc `User` class. 
 
 Then, we defined our viewset in views.py, importing the viewset model from the DRF. 
-We created the `UserViewSet` class that imports the `User` serializer and `User` classes, and added some additional permission references to the `UpdateUser` permissions, and filtering functionality based on User attributes. 
+We created the `UserViewSet` class that imports the `UserSerializer` serializer and `User` classes, added some additional permission references to the `UpdateUser` permissions, and filtering functionality based on User attributes. 
 
-Then, we registered the /users Viewset with the router in urls.py, under the /api root directly defined at project level, so our full URL will be:
+Then, we registered the /users `UserViewSet` with the DFR router in urls.py, located under the /api root directly defined at project level, so our full URL will be:
 
 ```
 /http://127.0.0.1:5000/api/users/
@@ -82,7 +82,7 @@ Then, we registered the /users Viewset with the router in urls.py, under the /ap
 
 <img width="600" alt="django" src="https://user-images.githubusercontent.com/48773037/83500621-edde6680-a4b6-11ea-9009-35ea095c481c.png">
  
-We then applied permissions to the accessible actions, defined in permissisons.py. The `UpdateUser` class has a boolean function to determine the actions based on type of user. The logic determines that any user can run safe HTTP methods, ie. create `POST` and update `PATCH` users, but, require admin authentication to run destructive HTTP `DELETE` methods. 
+We then applied permissions to the accessible HTTP actions, defined in permissisons.py. The `UpdateUser` class has a boolean function to determine the actions based on type of user. The logic determines that any user can run safe HTTP methods, ie. get `GET`, create `POST` and update `PATCH` users, but, require admin authentication to run destructive HTTP `DELETE` methods. 
 
 <img width="600" alt="django" src="https://user-images.githubusercontent.com/48773037/83498703-27fa3900-a4b4-11ea-87b0-1c3c819687d9.png">
 
