@@ -73,7 +73,7 @@ Then, by registering the `User` class to the admin.py file, we can authenticate 
 Then, we defined our viewset in views.py, importing the viewset model from the DRF. 
 We created the `UserViewSet` class that imports the `UserSerializer` serializer and `User` classes, added some additional permission references to the `UpdateUser` permissions, and filtering functionality based on User attributes. 
 
-Then, we registered the /users `UserViewSet` with the DFR router in urls.py, located under the /api root directly defined at project level, so our full URL will be:
+Then, we registered the /users `UserViewSet` with the DRF router in urls.py, located under the /api root directly defined at project level, so our full URL will be:
 
 ```
 http://127.0.0.1:5000/api/users/
