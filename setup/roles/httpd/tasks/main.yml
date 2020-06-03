@@ -3,12 +3,6 @@
     name: httpd
     state: present
 
-- name: Ensure httpd is enabled
-  service:
-    name: httpd
-    enabled: true
-    state: started
-
 - name: Install mod_wsgi to serve apache
   yum:
     name: mod_wsgi
@@ -22,10 +16,8 @@
     group: root
     mode: 0644
 
-- name: Update apache group permissions
-  file:
-    path: /vagrant/users_project
-    state: directory
-    owner: vagrant
-    group: apache
-    mode: 0775
+- name: Ensure httpd is enabled
+  service:
+    name: httpd
+    enabled: true
+    state: restarted
