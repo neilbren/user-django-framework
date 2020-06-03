@@ -24,20 +24,20 @@ Vagrant.configure("2") do |config|
  #Add httpd configs
  config.vm.provision "ansible_local" do |ansible|
        ansible.playbook = "/vagrant/setup/base.yml"
- end
 
  # Setup port forwarding
  config.vm.network "forwarded_port", guest: 5000, host: 5000
+# config.vm.network "forwarded_port", guest: 80, host: 8080
 
  # Create bilatoral sync between host and guest
  config.vm.synced_folder ".", "/vagrant", type: 'virtualbox'
 
- # Update all packages && install python
+ # Update all packages
  config.vm.provision "shell", inline: <<-SHELL
    sudo yum update -y
   SHELL
 
-  # Create python virtual environment
+  # Install python
   config.vm.provision :shell, :path => "python_setup/python_bootstrap.sh"
-
+ end
 end
