@@ -11,3 +11,6 @@ class UpdateUser(permissions.BasePermission):
 
        elif request.method in permissions.SAFE_METHODS:
             return True
+
+       else:
+           return False

@@ -7,8 +7,8 @@ class UserManager(BaseUserManager):
 
 
     def user_creation (self, email, username, password=None):
-        if len(email) <= 0:
-            raise ValueError('All Users must register an email address')
+        if not email:
+            raise ValueError('This field cannot be blank.')
 
         # Create a new model based on email && username
         user = self.model(
@@ -46,10 +46,10 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
 
     # Field for Authentication
-    USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = ['email']
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username']
 
-
+    #Allow djang to interat with our custom user model
     def get_username(self):
         return self.username
 

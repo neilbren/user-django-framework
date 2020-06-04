@@ -25,7 +25,7 @@ SECRET_KEY = 'tylpuxef2b=i9axiz2w)@90@b)jx)52m*y63e()gvomc75gs@b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'users_api',
-    'djoser',
 ]
 
 REST_FRAMEWORK = {
