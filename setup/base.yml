@@ -4,4 +4,7 @@
   tasks:
     - name: Include roles
       include_role:
-        name: httpd
+        name: "{{ item }}"
+      with_items:
+        - httpd
+        - yum

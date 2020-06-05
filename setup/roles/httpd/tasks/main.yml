@@ -1,13 +1,3 @@
-- name: Install httpd
-  yum:
-    name: httpd
-    state: present
-
-- name: Install mod_wsgi to serve apache
-  yum:
-    name: mod_wsgi
-    state: present
-
 - name: Configure Django apache.conf
   template:
     src: template.j2

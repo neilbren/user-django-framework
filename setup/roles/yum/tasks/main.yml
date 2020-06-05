@@ -1,0 +1,13 @@
+- name: ensure a list of packages installed
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - httpd
+    - python3
+    - mod_wsgi
+
+- name: upgrade all OS packages
+  yum:
+    name: '*'
+    state: latest

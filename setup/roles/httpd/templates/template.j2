@@ -1,18 +1,1 @@
-WSGIDaemonProcess users_api python-path=/vagrant/users_project:/home/vagrant/env/lib/python3.6/site-packages
-WSGIProcessGroup users_api
-WSGIScriptAlias /django /vagrant/users_project/wsgi.py
-<Directory /vagrant/users_project>
-    Require all granted
-</Directory>
-Alias /static /vagrant/users_project/static
-<Directory /vagrant/users_project/static>
-    Require all granted
-</Directory>
-<Directory /vagrant/users_project>
-   <Files wsgi.py>
-       Require all granted
-   </Files>
-</Directory>
-"WSGIDaemonProcess users_api python-path=/vagrant/users_project:/home/vagrant/env/lib/python3.6/site-packages"
-"WSGIProcessGroup users_api"
-"WSGIScriptAlias / /vagrant/users_project/wsgi.py"
+

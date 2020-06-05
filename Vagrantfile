@@ -25,6 +25,7 @@ Vagrant.configure("2") do |config|
  config.vm.provision "ansible_local" do |ansible|
        ansible.playbook = "/vagrant/setup/base.yml"
 
+
  # Setup port forwarding
  config.vm.network "forwarded_port", guest: 5000, host: 5000
 # config.vm.network "forwarded_port", guest: 80, host: 8080
@@ -34,10 +35,16 @@ Vagrant.configure("2") do |config|
 
  # Update all packages
  config.vm.provision "shell", inline: <<-SHELL
-   sudo yum update -y
-  SHELL
+   # Create alias python='python3'
+   if ! grep -q PYTHON_ALIAS_ADDED /home/vagrant/.bash_profile; then
+     echo "# PYTHON_ALIAS_ADDED" >> /home/vagrant/.bash_profile
+     echo "alias python='python3'" >> /home/vagrant/.bash_profile
+   fi
 
-  # Install python
-  config.vm.provision :shell, :path => "python_setup/python_bootstrap.sh"
+  SHELL
+  config.trigger.after [:provision] do |t|
+  t.name = "Reboot after provisioning"
+  t.run = { :inline => "vagrant reload" }
+  end
  end
 end
