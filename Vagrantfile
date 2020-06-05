@@ -40,11 +40,10 @@ Vagrant.configure("2") do |config|
      echo "# PYTHON_ALIAS_ADDED" >> /home/vagrant/.bash_profile
      echo "alias python='python3'" >> /home/vagrant/.bash_profile
    fi
-
   SHELL
-  config.trigger.after [:provision] do |t|
-  t.name = "Reboot after provisioning"
-  t.run = { :inline => "vagrant reload" }
-  end
+
+  #vagrant plugin install vagrant-reload
+  config.vm.provision :reload
+
  end
 end
