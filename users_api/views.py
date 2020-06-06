@@ -25,7 +25,7 @@ class UserViewSet(viewsets.ModelViewSet):
 
 
 @api_view(['POST'])
-def usersignup(request):
+def signup(request):
     serializer = UserSerializer(data=request.data)
 
     if serializer.is_valid():
