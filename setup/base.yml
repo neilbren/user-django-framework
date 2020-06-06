@@ -8,4 +8,9 @@
       with_items:
         - httpd
         - yum
-        - venv
+
+    - name: Create python venv
+      pip:
+        requirements: /vagrant/requirments.txt
+        virtualenv: /vagrant
+        virtualenv_command: /usr/bin/python3.6 -m venv

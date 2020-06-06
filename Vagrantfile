@@ -39,7 +39,9 @@ Vagrant.configure("2") do |config|
    if ! grep -q PYTHON_ALIAS_ADDED /home/vagrant/.bash_profile; then
      echo "# PYTHON_ALIAS_ADDED" >> /home/vagrant/.bash_profile
      echo "alias python='python3'" >> /home/vagrant/.bash_profile
-   fi
+
+     echo "# VENV_ACTIVATED" >> /home/vagrant/.bash_profile
+     echo "source /vagrant/bin/activate" >> /home/vagrant/.bash_profile
   SHELL
 
   #vagrant plugin install vagrant-reload
